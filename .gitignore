@@ -16,3 +16,13 @@ buildNumber.properties
 **/target/
 .idea
 **/.gitignore
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.iml
+.idea
