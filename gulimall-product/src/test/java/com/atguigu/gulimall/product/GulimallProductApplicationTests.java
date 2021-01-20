@@ -5,7 +5,7 @@ import com.atguigu.gulimall.product.service.BrandService;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -20,7 +20,7 @@ class GulimallProductApplicationTests {
 
 	@Test
 	void contextLoads() {
-		BrandEntity brandEntity = new BrandEntity();
+//		BrandEntity brandEntity = new BrandEntity();
 //		brandEntity.setName("华为");
 //		brandService.save(brandEntity);
 
@@ -29,13 +29,13 @@ class GulimallProductApplicationTests {
 //		brandEntity.setDescript("小米品牌");
 //		brandService.updateById(brandEntity);
 
-		List<BrandEntity> brand_id = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id", 1L));
+		/*List<BrandEntity> brand_id = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id", 1L));
 		Iterator<BrandEntity> iterator = brand_id.iterator();
 		while (iterator.hasNext()){
 			BrandEntity next = iterator.next();
 			System.out.println(next);
 		}
-		System.out.println("保存成功");
+		System.out.println("保存成功");*/
 	}
 
 }

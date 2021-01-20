@@ -14,7 +14,7 @@
 
 
     <properties>
-        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2.1.0.RELEASE</spring-cloud-alibaba.version>
     </properties>
     <dependencies>
         <!-- mybatis plus -->
@@ -32,7 +32,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
-            <version>4.4.13</version>
+            <version>4.4.12</version>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
@@ -51,9 +51,21 @@
             <version>2.5</version>
             <scope>provided</scope>
         </dependency>
+        <!-- 服务注册发现-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- 配置中心来做配置管理,引入依赖后需要添加bootstrap.yml,否则项目启动会报错 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
         </dependency>
     </dependencies>
 
