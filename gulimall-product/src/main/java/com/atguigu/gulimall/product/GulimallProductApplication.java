@@ -16,6 +16,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *   2.2.1.使用MapperScan注解配置扫描路径
  *   2.2.1.配置mapper映射文件路径 mybatis-plus.mapper-locations: classpath*:/mapper/** /*.xml,
 		classpath*表示扫描所有类路径(包括其他jar包的类路径)
+ * 3. 逻辑删除
+ *   3.1 配置逻辑删除规则
+ *   3.2 配置逻辑删除的组件bean
+ *   3.3 给bean加上逻辑删除注解@TableLogic
  */
 @EnableDiscoveryClient
 @MapperScan("com.atguigu.gulimall.product.dao")
