@@ -2,9 +2,10 @@ package com.atguigu.gulimall.product.controller;
 
 import java.util.Arrays;
 import java.util.Map;
-
+import com.atguigu.common.valid.UpdateStatusGroup;
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,7 +76,15 @@ public class BrandController {
 
         return R.ok();
     }
-
+    /**
+     * 修改状态
+     */
+    @RequestMapping("/update/status")
+    //@RequiresPermissions("product:brand:update")
+    public R updateStatus( @RequestBody BrandEntity brand){
+        brandService.updateById(brand);
+        return R.ok();
+    }
     /**
      * 删除
      */
