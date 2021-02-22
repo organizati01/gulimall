@@ -2,14 +2,18 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://10.0.0.1:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.0.197:3306/gulimall_pms?useUnicode=true&characterEncoding=UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: gulimall-product
   cloud:
     nacos:
       discovery:
-        server-addr: 10.0.0.1:8848
+        server-addr: 192.168.0.197:8848
+  servlet:
+    multipart:
+      max-file-size: 5GB
+      max-request-size: 5GB
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:
@@ -17,6 +21,13 @@ mybatis-plus:
       id-type: auto
       logic-delete-value: 1
       logic-not-delete-value: 0
+# minio配置
+minio:
+  endpoint: http://192.168.0.197:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucketImageName: min-io
+  serviceName: product
 server:
   port: 10001
 logging:

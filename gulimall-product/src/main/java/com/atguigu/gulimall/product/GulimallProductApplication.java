@@ -20,6 +20,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *   3.1 配置逻辑删除规则
  *   3.2 配置逻辑删除的组件bean
  *   3.3 给bean加上逻辑删除注解@TableLogic
+ * 4. JSR303
+ *   4.1 给bean添加校验注解
+ *   4.2 开启@Valid 校验错误后会有默认的响应
+ *   4.3 给校验的bean后紧跟一个BindingResult可以获得校验结果
+ * 5. 统一异常处理
  */
 @EnableDiscoveryClient
 @MapperScan("com.atguigu.gulimall.product.dao")

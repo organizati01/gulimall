@@ -15,10 +15,7 @@ import java.util.List;
 @SpringBootTest
 class GulimallProductApplicationTests {
 
-	@Autowired
-	BrandService brandService;
 
-	@Test
 	void contextLoads() {
 //		BrandEntity brandEntity = new BrandEntity();
 //		brandEntity.setName("华为");
