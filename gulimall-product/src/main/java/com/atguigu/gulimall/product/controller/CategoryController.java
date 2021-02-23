@@ -6,17 +6,14 @@ import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.atguigu.gulimall.product.entity.CategoryEntity;
 import com.atguigu.gulimall.product.service.CategoryService;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.R;
 
+import javax.validation.Valid;
 
 
 /**
@@ -31,6 +28,14 @@ import com.atguigu.common.utils.R;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+    //只拦截当前类发生的异常
+   /* @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public void error4(Exception e){
+
+        System.out.println("发生了异常 error4 "+e);
+    }*/
 
     /**
      * 查询所有的分类以及子分类
@@ -59,7 +64,7 @@ public class CategoryController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:category:save")
-    public R save(@RequestBody CategoryEntity category){
+    public R save(@Valid @RequestBody CategoryEntity category){
 		categoryService.save(category);
 
         return R.ok();

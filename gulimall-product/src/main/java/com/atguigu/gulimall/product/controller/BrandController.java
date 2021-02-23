@@ -8,11 +8,7 @@ import com.atguigu.common.valid.UpdateStatusGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.atguigu.gulimall.product.entity.BrandEntity;
 import com.atguigu.gulimall.product.service.BrandService;
@@ -34,6 +30,14 @@ import javax.validation.Valid;
 public class BrandController {
     @Autowired
     private BrandService brandService;
+
+    //只拦截当前类发生的异常
+    /*@ExceptionHandler(Exception.class)
+    @ResponseBody
+    public void error3(Exception e){
+
+        System.out.println("发生了异常 error3 "+e);
+    }*/
 
     /**
      * 列表
